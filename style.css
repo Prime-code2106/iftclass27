@@ -1,0 +1,366 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./background/pexels-francesco-ungaro-396547.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px; /* Reduced padding */
+    background: #111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    margin-left: 20px;
+    color: rgb(255, 255, 255);
+}
+
+span {
+    font-size: 25px; /* Reduced font size */
+    font-weight: bold;
+    color: orange;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 16px; /* Reduced font size */
+    gap: 20px; /* Reduced gap */
+    margin-right: 30px;
+}
+
+nav:hover {
+    border-radius: 50px/15px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    transition: ease-out 0.5s;
+}
+
+a:hover {
+    transition-duration: .20s;
+    border-radius: 50px/15px;
+    padding: 15px;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+    font-size: 35px;
+    margin-bottom: 10%;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #bfae16;
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgb(230, 231, 228) 0%,
+      rgb(24, 33, 32) 49%,
+      rgb(248, 244, 2) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.about-me {
+    background-color: #ffe9d3f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 30%;
+    object-fit: cover;
+    margin-right: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #030303;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #050505;
+    line-height: 1.6;
+}
+
+.about-text blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #0d0000;
+    margin: 15px 0;
+    padding-left: 10px;
+    border-left: 4px solid rgb(178, 111, 2);
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    font-size: 1rem;
+    color: #060606;
+    padding: 5px 0;
+}
+
+.courses {
+    padding: 50px 20px;
+    background-color: rgba(143, 134, 7, 0.763);
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8491d;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.course-item:hover {
+    background-color: #e8491d;
+    transform: scale(1.05);
+}
+
+.
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .student-card {
+        width: 300px; /* Adjust width for large screens */
+    }
+
+    .student-card img {
+        width: 220px; /* Adjust image size for large screens */
+        height: 270px; /* Adjust image size for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .student-card {
+        width: 250px; /* Adjust width for medium screens */
+    }
+
+    .student-card img {
+        width: 200px; /* Adjust image size for medium screens */
+        height: 250px; /* Adjust image size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .student-card {
+        width: 200px; /* Adjust width for small screens */
+    }
+
+    .student-card img {
+        width: 180px; /* Adjust image size for small screens */
+        height: 220px; /* Adjust image size for small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .student-card {
+        width: 100%; /* Full width for extra small screens */
+        padding: 20px; /* Adjust padding for extra small screens */
+    }
+
+    .student-card img {
+        width: 100%; /* Full width image for extra small screens */
+        height: auto; /* Auto height for extra small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .hero {
+        font-size: 28px;
+        margin-top: 20%;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .courses h2 {
+        font-size: 28px;
+    }
+
+    .course-item {
+        width: 150px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        font-size: 24px;
+        margin-top: 30%;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+
+    .courses h2 {
+        font-size: 24px;
+    }
+
+    .course-item {
+        width: 100%;
+        padding: 10px;
+    }
+}

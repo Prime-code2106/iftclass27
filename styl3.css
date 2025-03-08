@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.student-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.student-card {
+    background: #fff;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px; /* Increased width */
+    text-align: center;
+}
+
+.student-card img {
+    width: 250px; /* Increased image size */
+    height: 300px; /* Increased image size */
+    border-radius: 3%;
+    object-fit: cover;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.student-card h2 {
+    font-size: 24px; /* Increased font size */
+    margin: 15px 0; /* Increased margin */
+}
+
+.student-card p {
+    font-size: 18px; /* Increased font size */
+    color: #666;
+    margin: 10px 0; /* Increased margin */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .student-card {
+        width: 300px; /* Adjust width for large screens */
+    }
+
+    .student-card img {
+        width: 220px; /* Adjust image size for large screens */
+        height: 270px; /* Adjust image size for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .student-card {
+        width: 250px; /* Adjust width for medium screens */
+    }
+
+    .student-card img {
+        width: 200px; /* Adjust image size for medium screens */
+        height: 250px; /* Adjust image size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .student-card {
+        width: 200px; /* Adjust width for small screens */
+    }
+
+    .student-card img {
+        width: 180px; /* Adjust image size for small screens */
+        height: 220px; /* Adjust image size for small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .student-card {
+        width: 100%; /* Full width for extra small screens */
+        padding: 20px; /* Adjust padding for extra small screens */
+    }
+
+    .student-card img {
+        width: 100%; /* Full width image for extra small screens */
+        height: auto; /* Auto height for extra small screens */
+    }
+}

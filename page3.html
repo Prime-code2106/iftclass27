@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl3.css">
+    <title>Student Profiles</title>
+    
+</head>
+<body>
+    <h1>Student Profiles</h1>
+    <div class="student-container" id="student-container"></div>
+
+    <script>
+        const students = [
+            { name: "adeleke samuel", age: 10, matric: "ift/23/4098", phone: "09043809970", email: "adelekesam10@gmail.com", img: "background/360_F_454655667_Jh7HTTo6famiQ02fEghTj2EVdQE5GOF7.jpg" },
+            { name: "Jane Smith", age: 22, matric: "STU002", phone: "987-654-3210", email: "jane@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Michael Brown", age: 21, matric: "STU003", phone: "555-123-4567", email: "michael@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Sarah Johnson", age: 23, matric: "STU004", phone: "111-222-3333", email: "sarah@example.com", img: "https://via.placeholder.com/100" },
+            { name: "David Wilson", age: 20, matric: "STU005", phone: "444-555-6666", email: "david@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Emily Davis", age: 22, matric: "STU006", phone: "777-888-9999", email: "emily@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Chris Miller", age: 21, matric: "STU007", phone: "333-444-5555", email: "chris@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Jessica Taylor", age: 24, matric: "STU008", phone: "666-777-8888", email: "jessica@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Daniel Martinez", age: 23, matric: "STU009", phone: "999-000-1111", email: "daniel@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Sophia Hernandez", age: 20, matric: "STU010", phone: "222-333-4444", email: "sophia@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Matthew Anderson", age: 22, matric: "STU011", phone: "555-666-7777", email: "matthew@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Olivia Thomas", age: 21, matric: "STU012", phone: "888-999-0000", email: "olivia@example.com", img: "https://via.placeholder.com/100" },
+            { name: "James Jackson", age: 23, matric: "STU013", phone: "111-222-5555", email: "james@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Ava White", age: 20, matric: "STU014", phone: "444-555-8888", email: "ava@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Benjamin Harris", age: 22, matric: "STU015", phone: "777-888-2222", email: "benjamin@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Isabella Clark", age: 21, matric: "STU016", phone: "333-444-9999", email: "isabella@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Mason Lewis", age: 23, matric: "STU017", phone: "666-777-0000", email: "mason@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Mia Walker", age: 20, matric: "STU018", phone: "999-000-3333", email: "mia@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Ethan Hall", age: 22, matric: "STU019", phone: "222-333-6666", email: "ethan@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Charlotte Allen", age: 21, matric: "STU020", phone: "555-666-9999", email: "charlotte@example.com", img: "https://via.placeholder.com/100" },
+            { name: "William Young", age: 23, matric: "STU021", phone: "888-999-1111", email: "william@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Amelia King", age: 20, matric: "STU022", phone: "111-222-7777", email: "amelia@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Alexander Scott", age: 22, matric: "STU023", phone: "444-555-0000", email: "alexander@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Harper Green", age: 21, matric: "STU024", phone: "777-888-5555", email: "harper@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Elijah Adams", age: 23, matric: "STU025", phone: "333-444-2222", email: "elijah@example.com", img: "https://via.placeholder.com/100" },
+            { name: "Abigail Baker", age: 20, matric: "STU026", phone: "666-777-4444", email: "abigail@example.com", img: "https://via.placeholder.com/100" }
+        ];
+
+        const container = document.getElementById("student-container");
+
+        students.forEach(student => {
+            const card = document.createElement("div");
+            card.classList.add("student-card");
+
+            card.innerHTML = `
+                <img src="${student.img}" alt="${student.name}">
+                <h2>${student.name}</h2>
+                <p><strong>Age:</strong> ${student.age}</p>
+                <p><strong>Matric:</strong> ${student.matric}</p>
+                <p><strong>Phone:</strong> ${student.phone}</p>
+                <p><strong>Email:</strong> ${student.email}</p>
+            `;
+
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

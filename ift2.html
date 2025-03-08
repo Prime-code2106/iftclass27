@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="ift.css">
+     <style>
+          .form-container {
+               display: none;
+          }
+          .form-container.active {
+               display: block;
+          }
+     </style>
+</head>
+<body>
+     <div>
+          <header>
+               <div class="logo">
+                    <h3 class="logo-text">IFT CLASS <span> 27</span></h3>
+               </div>
+               <div id="sign-up-form" class="form-container active">
+                    <form id="signUpForm" action="sign-up" method="post" onsubmit="handleSignUp(event)">
+                         <h2>Sign up to IFT Class 27</h2>
+                         <label for="fname">First name</label>
+                         <input type="text" name="fname" class="form-control" placeholder="Enter your first name" required>
+                         
+                         <label for="lname">Last name</label>
+                         <input type="text" name="lname" class="form-control" placeholder="Enter your last name" required>
+                         
+                         <label for="email">Email</label>
+                         <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                         
+                         <label for="dob">Date of birth</label>
+                         <input type="date" name="dob" class="form-control" placeholder="Enter your date of birth" required>
+                         
+                         <label for="gender">Gender</label>
+                         <select name="gender" id="gender" class="form-control" required>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <option value="other">Other</option>
+                         </select>
+                         <!-- <a href="page3.html">Sign-up</a> -->
+                         <button type="submit" class="btn" >Sign Up</button>
+                    </form>
+                    <button onclick="toggleForms()">Already have an account? Login</button>
+               </div>
+
+               <div id="login-form" class="form-container">
+                    <form id="loginForm" action="login" method="post" onsubmit="handleLogin(event)">
+                         <h2>Login</h2>
+                         <label for="login-email">Email</label>
+                         <input type="email" name="login-email" class="form-control" placeholder="Enter your email" required>
+                         <br>
+                         <label for="login-password">Password</label>
+                         <input type="password" name="login-password" class="form-control" placeholder="Enter your password" required>
+                         <br>
+                         <button type="submit" class="btn">Login</button>
+                    </form>
+                    <button onclick="toggleForms()">Don't have an account? Sign Up</button>
+               </div>
+          </header>
+     </div>
+
+     <script>
+          function toggleForms() {
+               const signUpForm = document.getElementById('sign-up-form');
+               const loginForm = document.getElementById('login-form');
+               signUpForm.classList.toggle('active');
+               loginForm.classList.toggle('active');
+          }
+
+          function handleSignUp(event) {
+               event.preventDefault();
+               // Handle sign-up logic here
+               alert('you Sign-up successfully!');
+               window.location.href = 'page3.html'; // Redirect to another page after sign-up
+          }
+
+          function handleLogin(event) {
+               event.preventDefault();
+               // Handle login logic here
+               alert('Login successful!');
+               window.location.href = 'page3.html'; // Redirect to another page after login
+          }
+     </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('./background/download.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.logo-text {
+    font-size: 24px;
+    margin: 0;
+}
+
+.logo-text span {
+    color: #e8491d;
+}
+
+span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #bfae16;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 10px;
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e8491d;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button + button {
+    background-color: #555;
+    margin-top: 10px;
+}
+
+button + button:hover {
+    background-color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .form-container {
+        max-width: 350px; /* Adjust width for large screens */
+        padding: 25px; /* Adjust padding for large screens */
+    }
+
+    .logo-text {
+        font-size: 22px; /* Adjust font size for large screens */
+    }
+
+    span {
+        font-size: 28px; /* Adjust font size for large screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .form-container {
+        max-width: 300px; /* Adjust width for medium screens */
+        padding: 20px; /* Adjust padding for medium screens */
+    }
+
+    .logo-text {
+        font-size: 20px; /* Adjust font size for medium screens */
+    }
+
+    span {
+        font-size: 26px; /* Adjust font size for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 250px; /* Adjust width for small screens */
+        padding: 15px; /* Adjust padding for small screens */
+    }
+
+    .logo-text {
+        font-size: 18px; /* Adjust font size for small screens */
+    }
+
+    span {
+        font-size: 24px; /* Adjust font size for small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        max-width: 100%; /* Full width for extra small screens */
+        padding: 10px; /* Adjust padding for extra small screens */
+    }
+
+    .logo-text {
+        font-size: 16px; /* Adjust font size for extra small screens */
+    }
+
+    span {
+        font-size: 22px; /* Adjust font size for extra small screens */
+    }
+}
