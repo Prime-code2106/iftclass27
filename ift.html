@@ -8,7 +8,8 @@
 </head>
 <body>
     <!-- navigation and logo -->
-    <header>
+    <header class="header">
+       
 
         <!-- ift logo -->
         <div class="logo">
@@ -20,21 +21,50 @@
         <!-- navigation -->
 
 
-        <nav>
+        <nav id="desktopview">
             <a href="#">Home</a>
             <a href="#about">About</a>
             <a href="page3.html">Student infomation</a>
             <a href="#">Staff</a>
         </nav>
         <!-- futa logo -->
-        <div class="logo">
+        <div class="logo" id="desktopview">
           
             <img src="" alt="futa"><h2 class="logo-text">Federal Univesity of Technology</h2>
         </div>
+
+
+       <section class="mobilesection">
+
         
-        
+   
+          <section class="mobileview">
+           <nav>
+               <a href="#">Home</a>
+               <a href="#about">About</a>
+               <a href="page3.html">Student infomation</a>
+               <a href="#">Staff</a>
+           </nav>
+           <!-- futa logo -->
+           <div class="logo">
+             
+               <img src="Federal-University-of-Technology-Akure-FUTA-Logo.jpeg" alt="futa">
+               <h2 class="logo-text">Federal Univesity of <span>Technology</span> </h2>
+           </div>
+
+           
+       </section>
+       <div class="hamburger-menu" onclick="showclass()">
+        <div class="menubars"></div>
+      </div>
+
+       </section>
        
     </header>
+
+    
+
+
     <!-- main content -->
     <main class="contanier">
         <div class="hero">
@@ -101,11 +131,8 @@
     
     
     
-        <script>
-            function redirectToSignUp() {
-                window.location.href = 'ift2.html';
-            }
-        </script>
+        
+        <script src="main.js"></script>
     </main>
     
 </body>
