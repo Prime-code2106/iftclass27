@@ -1,93 +1,297 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+/* Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #080808;
+}
+
+/* Heading Styles */
 h1 {
-    color: #333;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Form Container Styles */
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.form-container.active {
+    display: block;
+}
+
+/* Input and Button Styles */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="file"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Button Styles */
+button {
+    background-color: #e8491d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Sort Button Styles */
+#sortButton {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    background-color: #4CAF50;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+#sortButton:hover {
+    background-color: #45a049;
+}
+
+/* Form Styles */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* File Input Styles */
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #e8491d;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.file-label:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Student Container Styles */
 .student-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
+/* Student Card Styles */
 .student-card {
-    background: #fff;
-    padding: 30px; /* Increased padding */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px; /* Increased width */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 250px;
     text-align: center;
+    transition: transform 0.3s;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Student Card Image Styles */
 .student-card img {
-    width: 250px; /* Increased image size */
-    height: 300px; /* Increased image size */
-    border-radius: 3%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 15px;
 }
 
+/* Student Card Heading Styles */
 .student-card h2 {
-    font-size: 24px; /* Increased font size */
-    margin: 15px 0; /* Increased margin */
+    font-size: 20px;
+    margin: 10px 0;
 }
 
+/* Student Card Paragraph Styles */
 .student-card p {
-    font-size: 18px; /* Increased font size */
+    font-size: 16px;
     color: #666;
-    margin: 10px 0; /* Increased margin */
+    margin: 5px 0;
+}
+
+/* Student Card Button Styles */
+.student-card button {
+    background-color: #e8491d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.student-card button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.student-card button + button {
+    background-color: #555;
+    margin-top: 10px;
+}
+
+.student-card button + button:hover {
+    background-color: #333;
+}
+
+/* Student Card Hover Effect */
+.student-card:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar Styles */
+#searchBar {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+#searchBar:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
     .student-card {
-        width: 300px; /* Adjust width for large screens */
+        width: 220px;
     }
 
     .student-card img {
-        width: 220px; /* Adjust image size for large screens */
-        height: 270px; /* Adjust image size for large screens */
+        width: 90px;
+        height: 90px;
     }
 }
 
 @media (max-width: 992px) {
+    h1 {
+        font-size: 2rem;
+    }
+
     .student-card {
-        width: 250px; /* Adjust width for medium screens */
+        width: 200px;
     }
 
     .student-card img {
-        width: 200px; /* Adjust image size for medium screens */
-        height: 250px; /* Adjust image size for medium screens */
+        width: 80px;
+        height: 80px;
     }
 }
 
 @media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
     .student-card {
-        width: 200px; /* Adjust width for small screens */
+        width: 100%;
     }
 
     .student-card img {
-        width: 180px; /* Adjust image size for small screens */
-        height: 220px; /* Adjust image size for small screens */
+        width: 70px;
+        height: 70px;
     }
 }
 
 @media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
     .student-card {
-        width: 100%; /* Full width for extra small screens */
-        padding: 20px; /* Adjust padding for extra small screens */
+        width: 100%;
     }
 
     .student-card img {
-        width: 100%; /* Full width image for extra small screens */
-        height: auto; /* Auto height for extra small screens */
+        width: 60px;
+        height: 60px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="file"],
+    button {
+        font-size: 0.9rem;
+    }
+
+    #searchBar {
+        font-size: 0.9rem;
     }
 }
 

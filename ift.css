@@ -80,14 +80,29 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="password"],
+input[type="number"],
 select {
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
     margin-bottom: 15px;
     width: 100%;
     box-sizing: border-box;
 }
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+input [type="number"],
+.hoverEffect{
+    margin: none;
+    border-radius: 20px;
+    border: none;
+    transition: ease-in-out .5s;
+}
+
+
 
 button {
     background-color: #e8491d;

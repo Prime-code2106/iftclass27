@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styl3.css">
     <title>Student Profiles</title>
-    
+
 </head>
 <body>
     <h1>Student Profiles</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search by name..." onkeyup="filterStudents()">
+
+    <!-- Sort Button -->
+    <button id="sortButton" onclick="sortStudentsByAge()">Sort by name</button>
+
+    
+              
+    <!-- Edit Student Form -->
+    <form id="editStudentForm" onsubmit="updateStudent(event)">
+        <h2>Edit Student</h2>
+        <input type="text" id="edit-name" placeholder="Name" required>
+        <input type="number" id="edit-age" placeholder="Age" required>
+        <input type="text" id="edit-matric" placeholder="Matric" required>
+        <input type="text" id="edit-phone" placeholder="Phone" required>
+        <input type="email" id="edit-email" placeholder="Email" required>
+        <input type="file" id="edit-img" accept="image/*">
+        <label for="edit-img" class="file-label">Choose File</label>
+        <button type="submit">Update Student</button>
+    </form>
+
     <div class="student-container" id="student-container"></div>
 
     <script>
-        const students = [
-            { name: "adeleke samuel", age: 10, matric: "ift/23/4098", phone: "09043809970", email: "adelekesam10@gmail.com", img: "background/360_F_454655667_Jh7HTTo6famiQ02fEghTj2EVdQE5GOF7.jpg" },
+        let students = JSON.parse(localStorage.getItem('students')) || [
+            { name: "adeleke samuel", age: 21, matric: "ift/23/4098", phone: "09043809970", email: "adelekesam10@gmail.com", img: "background/360_F_454655667_Jh7HTTo6famiQ02fEghTj2EVdQE5GOF7.jpg" },
             { name: "Jane Smith", age: 22, matric: "STU002", phone: "987-654-3210", email: "jane@example.com", img: "https://via.placeholder.com/100" },
             { name: "Michael Brown", age: 21, matric: "STU003", phone: "555-123-4567", email: "michael@example.com", img: "https://via.placeholder.com/100" },
             { name: "Sarah Johnson", age: 23, matric: "STU004", phone: "111-222-3333", email: "sarah@example.com", img: "https://via.placeholder.com/100" },
@@ -43,21 +65,103 @@
 
         const container = document.getElementById("student-container");
 
-        students.forEach(student => {
-            const card = document.createElement("div");
-            card.classList.add("student-card");
+        function displayStudents(students) {
+            container.innerHTML = '';
+            students.forEach((student, index) => {
+                const card = document.createElement("div");
+                card.classList.add("student-card");
 
-            card.innerHTML = `
-                <img src="${student.img}" alt="${student.name}">
-                <h2>${student.name}</h2>
-                <p><strong>Age:</strong> ${student.age}</p>
-                <p><strong>Matric:</strong> ${student.matric}</p>
-                <p><strong>Phone:</strong> ${student.phone}</p>
-                <p><strong>Email:</strong> ${student.email}</p>
-            `;
+                card.innerHTML = `
+                    <img src="${student.img}" alt="${student.name}">
+                    <h2>${student.name}</h2>
+                    <p><strong>Age:</strong> ${student.age}</p>
+                    <p><strong>Matric:</strong> ${student.matric}</p>
+                    <p><strong>Phone:</strong> ${student.phone}</p>
+                    <p><strong>Email:</strong> ${student.email}</p>
+                    <button onclick="editStudent(${index})">Edit</button>
+                    <button onclick="deleteStudent(${index})">Delete</button>
+                `;
 
-            container.appendChild(card);
-        });
+                container.appendChild(card);
+            });
+        }
+
+        function filterStudents() {
+            const searchTerm = document.getElementById("searchBar").value.toLowerCase();
+            const filteredStudents = students.filter(student => student.name.toLowerCase().includes(searchTerm));
+            displayStudents(filteredStudents);
+        }
+
+        function sortStudentsByAge() {
+            const sortedStudents = [...students].sort((a, b) => a.age - b.age);
+            displayStudents(sortedStudents);
+        }
+
+        function addStudent(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const matric = document.getElementById("matric").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+            const imgInput = document.getElementById("img");
+
+            // Check if a student with the same matric number already exists
+            const existingStudent = students.find(student => student.matric === matric);
+            if (existingStudent) {
+                alert('A student with this matric number already exists.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = e.target.result;
+                const newStudent = { name, age, matric, phone, email, img };
+                students.push(newStudent);
+                localStorage.setItem('students', JSON.stringify(students));
+                displayStudents(students);
+                document.getElementById("addStudentForm").reset();
+            };
+            reader.readAsDataURL(imgInput.files[0]);
+        }
+
+        function editStudent(index) {
+            const student = students[index];
+            document.getElementById("edit-name").value = student.name;
+            document.getElementById("edit-age").value = student.age;
+            document.getElementById("edit-matric").value = student.matric;
+            document.getElementById("edit-phone").value = student.phone;
+            document.getElementById("edit-email").value = student.email;
+
+            document.getElementById("editStudentForm").onsubmit = function(event) {
+                event.preventDefault();
+                const imgInput = document.getElementById("edit-img");
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    students[index] = {
+                        name: document.getElementById("edit-name").value,
+                        age: document.getElementById("edit-age").value,
+                        matric: document.getElementById("edit-matric").value,
+                        phone: document.getElementById("edit-phone").value,
+                        email: document.getElementById("edit-email").value,
+                        img: e.target.result
+                    };
+                    localStorage.setItem('students', JSON.stringify(students));
+                    displayStudents(students);
+                    document.getElementById("editStudentForm").reset();
+                };
+                reader.readAsDataURL(imgInput.files[0]);
+            };
+        }
+
+        function deleteStudent(index) {
+            students.splice(index, 1);
+            localStorage.setItem('students', JSON.stringify(students));
+            displayStudents(students);
+        }
+
+        // Initial display of students
+        displayStudents(students);
     </script>
 </body>
 </html>

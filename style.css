@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     padding: 0;
     box-sizing: border-box;
@@ -365,7 +366,10 @@ a:hover {
 }
 
 .hamburger-menu {
+<<<<<<< HEAD
+=======
     
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
     width: 40px;
     height: 40px;
     display: flex;
@@ -406,22 +410,39 @@ a:hover {
 .show .menubars::before {
     transform: rotate(45deg);
     background: white;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 }
 
 .show .menubars::after {
     transform: rotate(-45deg);
     background: white;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 }
 
 .mobilesection {
     display: none;
+<<<<<<< HEAD
+=======
     
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 }
 
 .mobileview {
     display: flexbox;
+<<<<<<< HEAD
+    height: 100%;
+    width: 20%;
+    padding: 0;
+}
+
+.mobileview nav {
+=======
     
     height: 100%;
     width: 20%;
@@ -430,31 +451,49 @@ a:hover {
     
  }
 .mobileview nav{
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
     display: grid;
     margin-top: 15px;
     margin-left: -40px;
     padding: 0;
     margin-bottom: 30px;
+<<<<<<< HEAD
+}
+
+=======
    
 }
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 .mobileview .logo img {
     height: 75px;
     width: 75px;
     margin-bottom: 10px;
     border-radius: 100%;
+<<<<<<< HEAD
+}
+
+=======
     
 }
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 .mobileview .logo {
     display: grid;
     margin-bottom: 10px;
     justify-items: center;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 .mobileview .logo h2 {
     font-size: 15px;
 }
 
 @media screen and (max-width: 650px) {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
     #desktopview {
         display: none;
     }
@@ -462,7 +501,10 @@ a:hover {
         display: flex;
         width: 90%;
         justify-content: space-evenly;
+<<<<<<< HEAD
+=======
         
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
         margin-right: -22px;
         padding-right: 10px;
         margin-top: -10px;
@@ -473,17 +515,26 @@ a:hover {
         margin-right: 3px;
         margin-left: 10px;
     }
+<<<<<<< HEAD
+    header {
+        display: flex;
+=======
    
     header {
         display: flex;
         
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
         flex-direction: row;
         padding-right: 20px;
         padding-left: 0px;
         justify-content: space-between;
         height: 60px;
     }
+<<<<<<< HEAD
+    .mobileview {
+=======
      .mobileview {
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
         display: flex;
         width: 100%;
         flex-direction: column;
@@ -492,26 +543,41 @@ a:hover {
         background-color: rgb(90, 89, 89);
         margin-top: -10px;
         padding-top: 10px;
-        visibility: hidden;
+        visibility: visible;
      }  
      .mobileview nav a {
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
         margin-left: 0;
         font-size: 25px;
         width: 100%;
         margin-left: 38px;
         padding-left: 10px;
+<<<<<<< HEAD
+    }
+    .mobileview .logo {
+        width: 100%;
+        margin: 0;
+    }
+=======
      }
      .mobileview .logo {
         width: 100%;
         margin: 0;
      }
 
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
     .mobileview .logo .logo-text {
         font-size: 23px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+<<<<<<< HEAD
+    }
+    .mobileview .logo .logo-text span {
+        color: white;
+    }
+=======
         
     }
     .mobileview .logo .logo-text span {
@@ -519,4 +585,5 @@ a:hover {
         
     }
     
+>>>>>>> 635c6978d6380445984ad29e0b2bf863c14c7e18
 }
