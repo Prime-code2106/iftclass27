@@ -90,6 +90,10 @@ select {
     box-sizing: border-box;
 }
 
+input[type="number"], {
+    border-radius: 0px;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="date"],
@@ -97,8 +101,7 @@ input[type="password"],
 input [type="number"],
 .hoverEffect{
     margin: none;
-    border-radius: 20px;
-    border: none;
+    border-radius:30px ;
     transition: ease-in-out .5s;
 }
 

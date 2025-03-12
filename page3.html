@@ -19,7 +19,7 @@
     
               
     <!-- Edit Student Form -->
-    <form id="editStudentForm" onsubmit="updateStudent(event)">
+    <form id="editStudentForm" class="form-container" onsubmit="updateStudent(event)">
         <h2>Edit Student</h2>
         <input type="text" id="edit-name" placeholder="Name" required>
         <input type="number" id="edit-age" placeholder="Age" required>
@@ -133,6 +133,8 @@
             document.getElementById("edit-phone").value = student.phone;
             document.getElementById("edit-email").value = student.email;
 
+            document.getElementById("editStudentForm").classList.add('active');
+
             document.getElementById("editStudentForm").onsubmit = function(event) {
                 event.preventDefault();
                 const imgInput = document.getElementById("edit-img");
@@ -149,6 +151,7 @@
                     localStorage.setItem('students', JSON.stringify(students));
                     displayStudents(students);
                     document.getElementById("editStudentForm").reset();
+                    document.getElementById("editStudentForm").classList.remove('active');
                 };
                 reader.readAsDataURL(imgInput.files[0]);
             };
