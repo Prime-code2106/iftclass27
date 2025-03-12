@@ -3,9 +3,9 @@ function redirectToSignUp() {
 }
 
 var hamburger = document.querySelector('.hamburger-menu')
-var mobile = document.querySelector('.mobilesection')
+var mobilee = document.querySelector('.mobileview')
 
 function showclass() {
     hamburger.classList.toggle('show')
-    mobile.classList.toggle('mob')
+    mobilee.classList.toggle('mobilesection')
 }

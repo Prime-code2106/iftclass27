@@ -248,7 +248,8 @@ a:hover {
 
 /* Responsive Styles */
 
-@media (max-width: 1200px) {
+@media  (max-width: 1200px) {
+
     .student-card {
         width: 300px; /* Adjust width for large screens */
     }
@@ -419,15 +420,12 @@ a:hover {
 
 .mobilesection {
     display: none;
-}
-
- .mob {
     
- }
+}
 
 .mobileview {
     display: flexbox;
-    border: 2px solid yellow;
+    
     height: 100%;
     width: 20%;
     padding: 0;
@@ -465,14 +463,23 @@ a:hover {
     }
     .mobilesection {
         display: flex;
-        width: 100%;
+        width: 90%;
+        justify-content: space-evenly;
         
-
+        margin-right: -22px;
+        padding-right: 10px;
+        margin-top: -10px;
+        padding-top: 10px;
+    }
+    .hamburger-menu {
+        margin-top: 10px;
+        margin-right: 3px;
+        margin-left: 10px;
     }
    
     header {
         display: flex;
-        border: 2px solid yellow;
+        
         flex-direction: row;
         padding-right: 20px;
         padding-left: 0px;
@@ -485,13 +492,17 @@ a:hover {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        background-color: rgb(90, 89, 89);
+        margin-top: -10px;
+        padding-top: 10px;
         visibility: hidden;
      }  
      .mobileview nav a {
         margin-left: 0;
-        font-size: 22px;
+        font-size: 25px;
         width: 100%;
         margin-left: 38px;
+        padding-left: 10px;
      }
      .mobileview .logo {
         width: 100%;
