@@ -80,6 +80,7 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="password"],
+input[type="number"],
 select {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -93,6 +94,7 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="password"],
+input [type="number"],
 .hoverEffect{
     margin: none;
     border-radius: 20px;
