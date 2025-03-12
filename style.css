@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     padding: 0;
     box-sizing: border-box;
@@ -244,9 +245,8 @@ a:hover {
     transform: scale(1.05);
 }
 
-.
-
 /* Responsive Styles */
+
 @media (max-width: 1200px) {
     .student-card {
         width: 300px; /* Adjust width for large screens */
@@ -362,5 +362,149 @@ a:hover {
     .course-item {
         width: 100%;
         padding: 10px;
+    }
+}
+
+.hamburger-menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.menubars {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: relative;
+}
+
+.menubars::before {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    content: '';
+    position: absolute;
+    transform: translateY(-10px);
+}
+
+.menubars::after {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    content: '';
+    position: absolute;
+    transform: translateY(10px);
+}
+
+.show .menubars {
+    background: transparent;
+}
+
+.show .menubars::before {
+    transform: rotate(45deg);
+    background: white;
+}
+
+.show .menubars::after {
+    transform: rotate(-45deg);
+    background: white;
+}
+
+.mobilesection {
+    display: none;
+}
+
+.mobileview {
+    display: flexbox;
+    height: 100%;
+    width: 20%;
+    padding: 0;
+}
+
+.mobileview nav {
+    display: grid;
+    margin-top: 15px;
+    margin-left: -40px;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.mobileview .logo img {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
+.mobileview .logo {
+    display: grid;
+    margin-bottom: 10px;
+    justify-items: center;
+}
+
+.mobileview .logo h2 {
+    font-size: 15px;
+}
+
+@media screen and (max-width: 650px) {
+    #desktopview {
+        display: none;
+    }
+    .mobilesection {
+        display: flex;
+        width: 90%;
+        justify-content: space-evenly;
+        margin-right: -22px;
+        padding-right: 10px;
+        margin-top: -10px;
+        padding-top: 10px;
+    }
+    .hamburger-menu {
+        margin-top: 10px;
+        margin-right: 3px;
+        margin-left: 10px;
+    }
+    header {
+        display: flex;
+        flex-direction: row;
+        padding-right: 20px;
+        padding-left: 0px;
+        justify-content: space-between;
+        height: 60px;
+    }
+    .mobileview {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(90, 89, 89);
+        margin-top: -10px;
+        padding-top: 10px;
+        visibility: hidden;
+    }  
+    .mobileview nav a {
+        margin-left: 0;
+        font-size: 25px;
+        width: 100%;
+        margin-left: 38px;
+        padding-left: 10px;
+    }
+    .mobileview .logo {
+        width: 100%;
+        margin: 0;
+    }
+    .mobileview .logo .logo-text {
+        font-size: 23px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobileview .logo .logo-text span {
+        color: white;
     }
 }

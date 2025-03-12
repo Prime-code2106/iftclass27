@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+     <title>Student Profiles</title>
      <link rel="stylesheet" href="ift.css">
      <style>
           .form-container {
@@ -11,6 +11,24 @@
           }
           .form-container.active {
                display: block;
+          }
+          input[type="file"] {
+               display: none;
+          }
+          .file-label {
+               display: inline-block;
+               padding: 10px 20px;
+               margin: 10px 0;
+               border-radius: 5px;
+               background-color: #e8491d;
+               color: #fff;
+               cursor: pointer;
+               transition: background-color 0.3s;
+               font-size: 1rem;
+               text-align: center;
+          }
+          .file-label:hover {
+               background-color: #333;
           }
      </style>
 </head>
@@ -22,27 +40,27 @@
                </div>
                <div id="sign-up-form" class="form-container active">
                     <form id="signUpForm" action="sign-up" method="post" onsubmit="handleSignUp(event)">
-                         <h2>Sign up to IFT Class 27</h2>
-                         <label for="fname">First name</label>
-                         <input type="text" name="fname" class="form-control" placeholder="Enter your first name" required>
+                         <h2>Sign Up</h2>
+                         <label for="img">Profile Image</label>
+                         <input type="file" id="img" accept="image/*" required>
+                         <label for="img" class="file-label">Choose File</label>
                          
-                         <label for="lname">Last name</label>
-                         <input type="text" name="lname" class="form-control" placeholder="Enter your last name" required>
+                         <label for="name">Name</label>
+                         <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+                         
+                         <label for="age">Age</label>
+                         <input type="number" name="age" class="form-control" placeholder="Enter your age" required>
+                         
+                         <label for="matric">Matric Number</label>
+                         <input type="text" name="matric" class="form-control" placeholder="Enter your matric number" required>
+                         
+                         <label for="phone">Phone Number</label>
+                         <input type="text" name="phone" class="form-control" placeholder="Enter your phone number" required>
                          
                          <label for="email">Email</label>
                          <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                          
-                         <label for="dob">Date of birth</label>
-                         <input type="date" name="dob" class="form-control" placeholder="Enter your date of birth" required>
-                         
-                         <label for="gender">Gender</label>
-                         <select name="gender" id="gender" class="form-control" required>
-                              <option value="male">Male</option>
-                              <option value="female">Female</option>
-                              <option value="other">Other</option>
-                         </select>
-                         <!-- <a href="page3.html">Sign-up</a> -->
-                         <button type="submit" class="btn" >Sign Up</button>
+                         <button type="submit" class="btn">Sign Up</button>
                     </form>
                     <button onclick="toggleForms()">Already have an account? Login</button>
                </div>
@@ -50,11 +68,11 @@
                <div id="login-form" class="form-container">
                     <form id="loginForm" action="login" method="post" onsubmit="handleLogin(event)">
                          <h2>Login</h2>
-                         <label for="login-email">Email</label>
-                         <input type="email" name="login-email" class="form-control" placeholder="Enter your email" required>
+                         <label for="login-matric">Matric Number</label>
+                         <input type="text" name="login-matric" class="form-control" placeholder="Enter your matric number" required>
                          <br>
                          <label for="login-password">Password</label>
-                         <input type="password" name="login-password" class="form-control" placeholder="Enter your password" required>
+                         <input type="password" name="login-password" class="form-control" placeholder="Enter your first name as password" required>
                          <br>
                          <button type="submit" class="btn">Login</button>
                     </form>
@@ -64,6 +82,35 @@
      </div>
 
      <script>
+          const students = JSON.parse(localStorage.getItem('students')) || [
+               { name: "adeleke samuel", age: 21, matric: "ift/23/4098", phone: "09043809970", email: "adelekesam10@gmail.com", img: "background/360_F_454655667_Jh7HTTo6famiQ02fEghTj2EVdQE5GOF7.jpg" },
+               { name: "Jane Smith", age: 22, matric: "STU002", phone: "987-654-3210", email: "jane@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Michael Brown", age: 21, matric: "STU003", phone: "555-123-4567", email: "michael@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Sarah Johnson", age: 23, matric: "STU004", phone: "111-222-3333", email: "sarah@example.com", img: "https://via.placeholder.com/100" },
+               { name: "David Wilson", age: 20, matric: "STU005", phone: "444-555-6666", email: "david@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Emily Davis", age: 22, matric: "STU006", phone: "777-888-9999", email: "emily@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Chris Miller", age: 21, matric: "STU007", phone: "333-444-5555", email: "chris@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Jessica Taylor", age: 24, matric: "STU008", phone: "666-777-8888", email: "jessica@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Daniel Martinez", age: 23, matric: "STU009", phone: "999-000-1111", email: "daniel@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Sophia Hernandez", age: 20, matric: "STU010", phone: "222-333-4444", email: "sophia@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Matthew Anderson", age: 22, matric: "STU011", phone: "555-666-7777", email: "matthew@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Olivia Thomas", age: 21, matric: "STU012", phone: "888-999-0000", email: "olivia@example.com", img: "https://via.placeholder.com/100" },
+               { name: "James Jackson", age: 23, matric: "STU013", phone: "111-222-5555", email: "james@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Ava White", age: 20, matric: "STU014", phone: "444-555-8888", email: "ava@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Benjamin Harris", age: 22, matric: "STU015", phone: "777-888-2222", email: "benjamin@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Isabella Clark", age: 21, matric: "STU016", phone: "333-444-9999", email: "isabella@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Mason Lewis", age: 23, matric: "STU017", phone: "666-777-0000", email: "mason@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Mia Walker", age: 20, matric: "STU018", phone: "999-000-3333", email: "mia@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Ethan Hall", age: 22, matric: "STU019", phone: "222-333-6666", email: "ethan@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Charlotte Allen", age: 21, matric: "STU020", phone: "555-666-9999", email: "charlotte@example.com", img: "https://via.placeholder.com/100" },
+               { name: "William Young", age: 23, matric: "STU021", phone: "888-999-1111", email: "william@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Amelia King", age: 20, matric: "STU022", phone: "111-222-7777", email: "amelia@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Alexander Scott", age: 22, matric: "STU023", phone: "444-555-0000", email: "alexander@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Harper Green", age: 21, matric: "STU024", phone: "777-888-5555", email: "harper@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Elijah Adams", age: 23, matric: "STU025", phone: "333-444-2222", email: "elijah@example.com", img: "https://via.placeholder.com/100" },
+               { name: "Abigail Baker", age: 20, matric: "STU026", phone: "666-777-4444", email: "abigail@example.com", img: "https://via.placeholder.com/100" }
+          ];
+
           function toggleForms() {
                const signUpForm = document.getElementById('sign-up-form');
                const loginForm = document.getElementById('login-form');
@@ -73,16 +120,38 @@
 
           function handleSignUp(event) {
                event.preventDefault();
-               // Handle sign-up logic here
-               alert('you Sign-up successfully!');
-               window.location.href = 'page3.html'; // Redirect to another page after sign-up
+               const name = document.querySelector('input[name="name"]').value;
+               const age = document.querySelector('input[name="age"]').value;
+               const matric = document.querySelector('input[name="matric"]').value;
+               const phone = document.querySelector('input[name="phone"]').value;
+               const email = document.querySelector('input[name="email"]').value;
+               const imgInput = document.getElementById("img");
+
+               const reader = new FileReader();
+               reader.onload = function(e) {
+                    const img = e.target.result;
+                    const newStudent = { name, age, matric, phone, email, img };
+                    students.push(newStudent);
+                    localStorage.setItem('students', JSON.stringify(students));
+                    alert('Sign-up successful!');
+                    toggleForms(); // Show login form after successful sign-up
+               };
+               reader.readAsDataURL(imgInput.files[0]);
           }
 
           function handleLogin(event) {
                event.preventDefault();
-               // Handle login logic here
-               alert('Login successful!');
-               window.location.href = 'page3.html'; // Redirect to another page after login
+               const matric = document.querySelector('input[name="login-matric"]').value;
+               const password = document.querySelector('input[name="login-password"]').value;
+
+               const student = students.find(student => student.matric === matric && student.name.split(' ')[0].toLowerCase() === password.toLowerCase());
+
+               if (student) {
+                    alert('Login successful!');
+                    window.location.href = 'page3.html'; // Redirect to another page after login
+               } else {
+                    alert('Invalid matric number or password.');
+               }
           }
      </script>
 </body>
