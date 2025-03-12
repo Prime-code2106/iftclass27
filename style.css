@@ -244,12 +244,9 @@ a:hover {
     transform: scale(1.05);
 }
 
-.
-
 /* Responsive Styles */
 
-@media  (max-width: 1200px) {
-
+@media (max-width: 1200px) {
     .student-card {
         width: 300px; /* Adjust width for large screens */
     }
@@ -495,7 +492,7 @@ a:hover {
         background-color: rgb(90, 89, 89);
         margin-top: -10px;
         padding-top: 10px;
-        visibility: hidden;
+        visibility: visible;
      }  
      .mobileview nav a {
         margin-left: 0;
