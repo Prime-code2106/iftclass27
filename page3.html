@@ -16,8 +16,19 @@
     <!-- Sort Button -->
     <button id="sortButton" onclick="sortStudentsByAge()">Sort by name</button>
 
-    
-              
+    <!-- Add Student Form
+    <form id="addStudentForm" class="form-container" onsubmit="addStudent(event)">
+        <h2>Add Student</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="text" id="matric" placeholder="Matric" required>
+        <input type="text" id="phone" placeholder="Phone" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="file" id="img" accept="image/*" required>
+        <label for="img" class="file-label">Choose File</label>
+        <button type="submit">Add Student</button>
+    </form> -->
+
     <!-- Edit Student Form -->
     <form id="editStudentForm" class="form-container" onsubmit="updateStudent(event)">
         <h2>Edit Student</h2>
@@ -61,6 +72,7 @@
             { name: "Harper Green", age: 21, matric: "STU024", phone: "777-888-5555", email: "harper@example.com", img: "https://via.placeholder.com/100" },
             { name: "Elijah Adams", age: 23, matric: "STU025", phone: "333-444-2222", email: "elijah@example.com", img: "https://via.placeholder.com/100" },
             { name: "Abigail Baker", age: 20, matric: "STU026", phone: "666-777-4444", email: "abigail@example.com", img: "https://via.placeholder.com/100" }
+            
         ];
 
         const container = document.getElementById("student-container");
