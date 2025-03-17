@@ -126,7 +126,6 @@ input[type="file"] {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    position: relative;
     width: 100%;
     max-width: 1200px;
 }
@@ -139,9 +138,10 @@ input[type="file"] {
     padding: 20px;
     width: 250px;
     text-align: center;
-    position: absolute;
     transition: transform 0.3s;
     animation: fadeIn 1s ease-in-out;
+    /* Change position to relative */
+    position: relative;
 }
 
 /* Student Card Image Styles */

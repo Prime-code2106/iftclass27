@@ -21,3 +21,17 @@ bars.addEventListener('click', removeclass = () => {
     }
     
 })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the element that will be clicked
+    let clickElement = document.querySelector(".show");
+
+    // Select the target element to be hidden
+    let targetElement = document.getElementById("mobile");
+
+    // Add event listener for the click event
+    clickElement.addEventListener("click", function () {
+        targetElement.style.visibility = "hidden";
+    });
+});
